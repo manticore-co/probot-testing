@@ -1,6 +1,7 @@
 name: New Bug
 description: Report a bug
 labels: ["bug"]
+type: Bug
 projects: ["Symprex/Signature365"]
 body:
   - type: markdown
@@ -37,15 +38,11 @@ body:
         - 'Show-stopper'
     validations:
       required: true
-  - type: dropdown
-    id: env
+  - type: textarea
+    id: tenants
     attributes:
-      label: Which environment can the bug be seen?
-      multiple: true
-      options:
-        - 'UAT'
-        - 'Production'
-      default: 0
+      label: Affected Tenants
+      description: Please provide a list of affected tenant link(s)
     validations:
       required: true
   - type: textarea
@@ -66,25 +63,13 @@ body:
     id: billing
     attributes:
       label: Is this a billing bug? If so please provide additional details (optional)
-      description: We need to know whether this is a problem with a specific subscription type such as Credit Card, License Key or Partner. Please provide details and affected tenant link(s) where possible.
-    validations:
-      required: false
-  - type: dropdown
-    id: browsers
-    attributes:
-      label: What browsers are you seeing the problem on? (optional)
-      multiple: true
-      options:
-        - Firefox
-        - Chrome
-        - Safari
-        - Microsoft Edge
+      description: We need to know whether this is a problem with a specific subscription type such as Credit Card, License Key or Partner
     validations:
       required: false
   - type: input
     id: support-ticket
     attributes:
       label: Support Ticket (optional)
-      description: A link to the FreshDesk ticket reporting the bug
+      description: A link to the support ticket system reporting the bug
     validations:
       required: false

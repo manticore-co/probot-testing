@@ -1,6 +1,7 @@
 name: New Enhancement
 description: Request an enhancement/feature
 labels: ["enhancement"]
+type: Enhancement
 projects: ["Symprex/Signature365"]
 body:
   - type: textarea

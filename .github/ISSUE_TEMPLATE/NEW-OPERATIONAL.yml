@@ -1,6 +1,7 @@
 name: Operational
 description: An issue related to operational matters
 labels: ["operational"]
+type: Operational
 projects: ["Symprex/Signature365"]
 body:
   - type: textarea
