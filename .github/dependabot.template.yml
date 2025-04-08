@@ -1,0 +1,128 @@
+version: 2
+
+updates:
+  - package-ecosystem: npm
+    directory: /src/{Core,Apps}/*/*/package-lock.json
+
+    schedule:
+      interval: 'weekly'
+      time: '07:00'
+
+    commit-message:
+      prefix: '[Deps] '
+    
+    groups:
+      minor-only:
+        applies-to: version-updates
+        update-types:
+          - 'minor'
+      
+      patch-only:
+        applies-to: version-updates
+        update-types:
+          - 'patch'
+
+    ignore:
+      - dependency-name: 'webpack-dev-server'
+        update-types: ['version-update:semver-major']
+
+      - dependency-name: 'webpack-dev-middleware'
+        update-types: ['version-update:semver-major']
+
+      - dependency-name: 'webpack-cli'
+        update-types: ['version-update:semver-major']
+
+      - dependency-name: 'webpack'
+        update-types: ['version-update:semver-major']
+
+      - dependency-name: '@quasar/app'
+        update-types: ['version-update:semver-major']
+
+      - dependency-name: 'quasar'
+        update-types: ['version-update:semver-major']
+
+      - dependency-name: 'tinymce'
+        update-types: ['version-update:semver-major']
+
+      - dependency-name: 'ts-loader'
+        update-types: ['version-update:semver-major']
+
+      - dependency-name: 'ajv'
+        update-types: ['version-update:semver-major']
+
+  - package-ecosystem: npm
+    directory: /src/Apps/*/*/{workers-site,worker}/package-lock.json
+
+    schedule:
+      interval: 'weekly'
+      time: '07:00'
+
+    commit-message:
+      prefix: '[Deps] '
+    
+    groups:
+      minor-only:
+        applies-to: version-updates
+        update-types:
+          - 'minor'
+      
+      patch-only:
+        applies-to: version-updates
+        update-types:
+          - 'patch'
+
+    ignore:
+      - dependency-name: 'mime'
+        
+      - dependency-name: 'webpack-dev-server'
+        update-types: ['version-update:semver-major']
+
+      - dependency-name: 'webpack-dev-middleware'
+        update-types: ['version-update:semver-major']
+
+      - dependency-name: 'webpack'
+        update-types: ['version-update:semver-major']
+
+      - dependency-name: 'ts-loader'
+        update-types: ['version-update:semver-major']
+
+      - dependency-name: 'mime'
+        update-types: ['version-update:semver-major']
+
+  - package-ecosystem: npm
+    directory: /devops/package-lock.json
+
+    schedule:
+      interval: 'weekly'
+      time: '07:00'
+
+    commit-message:
+      prefix: '[Deps] '
+    
+    groups:
+      minor-only:
+        applies-to: version-updates
+        update-types:
+          - 'minor'
+      
+      patch-only:
+        applies-to: version-updates
+        update-types:
+          - 'patch'
+
+    ignore:
+      - dependency-name: '@azure/identity'
+        update-types: ['version-update:semver-major']
+
+      - dependency-name: '@azure/msal-node'
+        update-types: ['version-update:semver-major']
+
+#  - package-ecosystem: nuget
+#    directory: /{src,tests}/**/*.csproj
+#
+#    schedule:
+#      interval: 'weekly'
+#      time: '07:00'
+#
+#    commit-message:
+#      prefix: '[Deps] '

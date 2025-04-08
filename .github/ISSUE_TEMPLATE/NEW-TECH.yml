@@ -1,0 +1,11 @@
+name: New Tech/Dev work
+description: Technical debt / dev improvement related work
+labels: ["tech"]
+projects: ["Symprex/Signature365"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+    validations:
+      required: true

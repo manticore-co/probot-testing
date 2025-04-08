@@ -1,0 +1,51 @@
+name: New Bug
+description: Report a bug
+labels: ["bug"]
+projects: ["Symprex/Signature365"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please fill out the fields below to report a new bug, including as much information as possible, including screenshots and links to live examples. A reproduction in our UAT environment is ideal
+  - type: textarea
+    id: description
+    attributes:
+      label: Description / Repro Steps
+      description: What is the bug? How can we reproduce it?
+    validations:
+      required: true
+  - type: dropdown
+    id: app
+    attributes:
+      label: Which app is this affecting? (optional)
+      multiple: true
+      options:
+        - 'Import: Active Directory Connector'
+        - 'Import: Database Connector'
+        - 'Import: Microsoft 365'
+        - 'Import'
+        - 'Portal: Customer'
+        - 'Portal: Internal'
+        - 'Portal: Partner'
+        - 'Signature Generation: Exchange Transport Agent'
+        - 'Signature Generation: Outlook Add-In'
+        - 'Signature Generation: Outlook Agent'
+        - 'Signature Generation: Server-Side Injection'
+        - 'Other'
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: What browsers are you seeing the problem on? (optional)
+      multiple: true
+      options:
+        - Firefox
+        - Chrome
+        - Safari
+        - Microsoft Edge
+  - type: input
+    id: support-ticket
+    attributes:
+      label: Support Ticket (optional)
+      description: A link to the FreshDesk ticket reporting the bug
+    validations:
+      required: false
