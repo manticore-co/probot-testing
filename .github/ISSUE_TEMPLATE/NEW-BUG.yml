@@ -10,7 +10,7 @@ body:
   - type: dropdown
     id: app
     attributes:
-      label: Which app is this affecting?
+      label: Which app(s) is this bug affecting?
       multiple: true
       options:
         - 'Portal: Customer'
@@ -40,7 +40,7 @@ body:
   - type: dropdown
     id: env
     attributes:
-      label: Which environment can the issue be seen?
+      label: Which environment can the bug be seen?
       multiple: true
       options:
         - 'UAT'
@@ -59,13 +59,13 @@ body:
     id: mitigation
     attributes:
       label: Mitigation Steps (optional)
-      description: Have you tried to workaround the issue? What steps have you tried?
+      description: Have you tried to workaround the bug? What steps have you tried?
     validations:
       required: false
   - type: textarea
     id: billing
     attributes:
-      label: Is this a billing issue? If so please provide details (optional)
+      label: Is this a billing bug? If so please provide additional details (optional)
       description: We need to know whether this is a problem with a specific subscription type such as Credit Card, License Key or Partner. Please provide details and affected tenant link(s) where possible.
     validations:
       required: false

@@ -1,0 +1,11 @@
+name: Epic
+description: A large change to the system, to be split into multiple sub-issues
+labels: ["epic"]
+projects: ["Symprex/Signature365"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+    validations:
+      required: true
