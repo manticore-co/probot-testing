@@ -7,6 +7,47 @@ body:
     attributes:
       value: |
         Please fill out the fields below to report a new bug, including as much information as possible, including screenshots and links to live examples. A reproduction in our UAT environment is ideal
+  - type: dropdown
+    id: app
+    attributes:
+      label: Which app is this affecting?
+      multiple: true
+      options:
+        - 'Portal: Customer'
+        - 'Portal: Admin'
+        - 'Portal: Partner'
+        - 'Integration: Outlook Add-In'
+        - 'Integration: Outlook Agent'
+        - 'Integration: Exchange Transport Agent'
+        - 'Integration: Server-Side Injection'
+        - 'Connector: Database'
+        - 'Connector: Exchange Transport Agent'
+        - 'Connector: Entra ID'
+        - 'Other'
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: How severe is this bug?
+      options:
+        - 'Annoying with mitigation'
+        - 'Annoying without mitigation'
+        - 'Show-stopper'
+    validations:
+      required: true
+  - type: dropdown
+    id: env
+    attributes:
+      label: Which environment can the issue be seen?
+      multiple: true
+      options:
+        - 'UAT'
+        - 'Production'
+      default: 0
+    validations:
+      required: true
   - type: textarea
     id: description
     attributes:
@@ -14,24 +55,20 @@ body:
       description: What is the bug? How can we reproduce it?
     validations:
       required: true
-  - type: dropdown
-    id: app
+  - type: textarea
+    id: mitigation
     attributes:
-      label: Which app is this affecting? (optional)
-      multiple: true
-      options:
-        - 'Import: Active Directory Connector'
-        - 'Import: Database Connector'
-        - 'Import: Microsoft 365'
-        - 'Import'
-        - 'Portal: Customer'
-        - 'Portal: Internal'
-        - 'Portal: Partner'
-        - 'Signature Generation: Exchange Transport Agent'
-        - 'Signature Generation: Outlook Add-In'
-        - 'Signature Generation: Outlook Agent'
-        - 'Signature Generation: Server-Side Injection'
-        - 'Other'
+      label: Mitigation Steps (optional)
+      description: Have you tried to workaround the issue? What steps have you tried?
+    validations:
+      required: false
+  - type: textarea
+    id: billing
+    attributes:
+      label: Is this a billing issue? If so please provide details (optional)
+      description: We need to know whether this is a problem with a specific subscription type such as Credit Card, License Key or Partner. Please provide details and affected tenant link(s) where possible.
+    validations:
+      required: false
   - type: dropdown
     id: browsers
     attributes:
@@ -42,6 +79,8 @@ body:
         - Chrome
         - Safari
         - Microsoft Edge
+    validations:
+      required: false
   - type: input
     id: support-ticket
     attributes:
